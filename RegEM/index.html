@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/tapio_template.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+
+<title>Tapio Schneider -> RegEM</title>
+
+<!-- InstanceEndEditable -->
+<link href="../style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../scripts/jquery-1.5.min.js"></script>
+<script type="text/javascript" src="../scripts/tapio.js"></script>
+    <![if !IE]><style type="text/css">
+
+        body    {
+
+            overflow-y: scroll;
+
+            }
+
+    </style><![endif]>
+<!-- InstanceBeginEditable name="head" -->
+
+<!-- InstanceEndEditable -->
+</head>
+
+
+<!-- InstanceBeginEditable name="Body Class" --><body class=""><!-- InstanceEndEditable -->
+
+<div id="container">
+  <div id="header">
+    <h1><a href="../index.html"><span class="name_first">TAPIO</span> <span class="name_second">SCHNEIDER</span></a></h1>
+	<h2>Climate dynamics of Earth and other planets</h2>
+  </div><!-- end #header -->
+    
+  <div id="mainContent">
+	<ul id="nav">
+		<li style="width:80px;" class="home"><a href="../index.html">Home</a></li>
+		<li style="width:100px;" class="bio"><a href="../biography.html">Biography</a></li>
+		<li style="width:100px;" class="research dropdown"><a href="../research.html">Research</a>
+			<ul style="width:110px;">
+				<li><a href="../research.html#earth">Earth</a></li>
+				<li><a href="../research.html#otherPlanets">Other Planets</a></li>
+			</ul>
+		</li>
+		<li style="width:84px;" class="people dropdown"><a href="../people.html">People</a>
+			<ul style="width:130px;">
+				<li><a href="../people.html#admins">Admin assistant</a></li>
+				<li><a href="../people.html#postdocs">Postdocs</a></li>
+				<li><a href="../people.html#grads">Grad students</a></li>
+				<li><a href="../people.html#interns">Interns/visitors</a></li>
+				<li><a href="../people.html#alumni">Alumni</a></li>
+			</ul>
+		</li>
+		<li style="width:118px;" class="animations dropdown"><a href="../animations.html">Animations</a>
+			<ul style="width:230px;">
+				<li><a href="../animations.html#stormtracks">Storm tracks</a></li>
+				<li><a href="../animations.html#tidallyLocked">Tidally locked Earth</a></li>
+				<li><a href="../animations.html#giants">Giant planets</a></li>
+				<li><a href="../animations.html#spinup">Spinup of general circulation</a></li>
+				<li><a href="../animations.html#centuryTemp">20th century temp. changes</a></li>
+			</ul>
+		</li>
+		<li style="width:100px;" class="software dropdown"><a href="../software.html">Software</a>
+			<ul style="width:100px;">
+				<li><a href="index.html">RegEM</a></li>
+				<li><a href="../arfit/index.html">ARfit</a></li>
+				<li><a href="../gcms/index.html">GCMs</a></li>
+			</ul>
+		</li>
+		<li style="width:125px;" class="publications dropdown"><a href="../pubs.html">Publications</a>
+			<ul style="width:125px;">
+				<li><a href="../pubs.html#peer">Peer-reviewed</a></li>
+				<li><a href="../pubs.html#books">Books/chapters</a></li>
+				<li><a href="../pubs.html#misc">Miscellanea</a></li>
+			</ul>
+		</li>
+		<li style="width: 95px;" class="courses dropdown"><a href="../courses.html">Courses</a>
+			<ul style="width:95px;">
+				<li><a href="../courses.html#current">Current</a></li>
+				<li><a href="../courses.html#past">Past</a></li>
+			</ul>
+		</li>
+		<li style="width:69px;"><a href="http://clidyn.ethz.ch/wiki/" target="_blank">Forum</a></li>
+	</ul>
+
+  <!-- InstanceBeginEditable name="MainContent" -->
+
+
+
+	<div id="singleWide">
+
+		<h2>RegEM: Regularized Expectation Maximization</h2>
+
+		<h3>Purpose</h3>
+
+		<p>What follows is a collection of <a href="http://www.mathworks.com/">Matlab</a> modules for</p>
+
+		<ul>
+
+			<li>the estimation of mean values and covariance matrices from incomplete datasets, and</li>
+
+			<li>the imputation of missing values in incomplete datasets.</li>
+
+		</ul>
+
+	
+
+		<p>The modules implement the regularized EM algorithm described in</p>
+
+			
+
+		<p class="reference">T. Schneider, 2001: <a href="http://clidyn.ethz.ch/papers/imputation.pdf">Analysis of incomplete climate data: Estimation of mean values and	covariance matrices and imputation of missing values</a>. <em>Journal of Climate</em>, <strong>14</strong>, 853-871.</p>
+
+			
+
+		<p>The EM algorithm for Gaussian data is based on iterated linear regression analyses. In the regularized EM algorithm, a regularized estimation method replaces the conditional maximum likelihood estimation of regression parameters in the conventional EM algorithm for Gaussian data. The modules here provide truncated total least squares (with fixed truncation parameter)	and ridge regression with generalized cross-validation as regularized estimation methods.</p>		
+
+		<p>The implementation of the regularized EM algorithm is modular, so that the modules that perform he regularized estimation of regression parameters (e.g., ridge regression and generalized cross-validation) can be exchanged for other regularization methods and other methods of determiningca regularization parameter. Per-Christian Hansen's <a href="http://www.imm.dtu.dk/~pch/Regutools/regutools.html">Regularization Tools</a> contain Matlab modules implementing a collection of regularization methods that can be adapted to fit into the framework of the EM algorithm. The generalized cross-validation modules of the regularized EM algorithm	are adapted from Hansen's generalized cross-validation modules.</p>			
+
+		<p>In the Matlab implementation of the regularized EM algorithm, more emphasis was placed on the modularity of the program code than on computational efficiency.
+		The regularized EM algorithm is currently being developed further under a project funded by the <a href="http://www.nsf.gov/">National Science Foundation's</a>
+		<a href="http://www.nsf.gov/funding/pgm_summ.jsp?pims_id=5750">Paleo Perspectives on Climate Change</a> program</p>
+
+		<h3>Installation</h3>
+
+		<p>The program package consists of several Matlab modules. To install the programs, copy the package (available as a <a href="imputation.tar.gz">tar.gz-file</a>) into a directory that is accessible by Matlab. Unpack the package using</p>
+
+		<p class="reference"><code>gunzip imputation.tar.gz<br />
+
+		tar -xvf imputation.tar</code></p>
+
+		<p>Starting Matlab and invoking Matlab's online help function</p>	
+
+		<p class="reference"><code>help filename</code></p>
+
+			
+
+		<p>displays information on the module <code>filename.m</code>.</p>			
+
+		<h3>Module Descriptions</h3>
+
+			
+
+		<dl class="modules">
+
+			<dt><a href="CHANGES">CHANGES</a></dt>
+
+			<dd>Recent significant changes of the programs.</dd>
+
+			<dt><a href="center.m">center.m</a></dt>
+
+			<dd>Centers data by subtracting the mean.</dd>
+
+			<dt><a href="gcvfctn.m">gcvfctn.m</a> (auxiliary module to gcvridge.m)</dt>
+
+			<dd>Evaluates generalized cross-validation function.</dd>
+
+			<dt><a href="gcvridge.m">gcvridge.m</a></dt>
+
+			<dd>Finds minimum of generalized cross-validation function for ridge regression.</dd>
+
+			<dt><a href="iridge.m">iridge.m</a></dt>
+
+			<dd>Computes regression parameters by individual ridge regressions.</dd>
+
+			<dt><a href="mridge.m">mridge.m</a></dt>
+
+			<dd>Computes regression parameters by a multiple ridge regression.</dd>
+
+			<dt><a href="nancov.m">nancov.m</a></dt>
+
+			<dd>Sample covariance matrix of available values in incomplete dataset.</dd>
+
+			<dt><a href="nanmean.m">nanmean.m</a></dt>
+
+			<dd>Sample mean of available values in incomplete dataset.</dd>
+
+			<dt><a href="nanstd.m">nanstd.m</a></dt>
+
+			<dd>Standard deviation of available values in incomplete dataset.</dd>
+
+			<dt><a href="nansum.m">nansum.m</a></dt>
+
+			<dd>Sum over available values in incomplete dataset.</dd>
+
+			<dt><a href="pca_truncation_criteria.m">pca_truncation_criteria.m</a></dt>
+
+			<dd>Computes criteria for truncating principal component analyses</dd>
+
+			<dt><a href="peigs.m">peigs.m</a></dt>
+
+			<dd>Computes positive eigenvalues and corresponding eigenvectors.</dd>
+
+			<dt><a href="pttls.m">pttls.m</a></dt>
+
+			<dd>Computes regression parameters by truncated total least squares.</dd>
+
+			<dt><a href="regem.m">regem.m</a></dt>
+
+			<dd>Driver module for regularized EM algorithm.</dd>
+
+			<dt><a href="standardize.m">standardize.m</a></dt>
+
+			<dd>Standardizes data by subtracting the mean and scaling with the standard deviation.</dd>
+
+		</dl>
+
+	</div>
+
+
+
+  <!-- InstanceEndEditable -->
+
+  <div id="footer"><!-- InstanceBeginEditable name="Copyright" -->
+
+    <p>&copy; 2013 Tapio Schneider</p>
+
+  <!-- InstanceEndEditable -->
+  </div><!-- end #footer -->
+	</div><!-- end #mainContent -->
+</div><!-- end #container -->
+</body>
+<!-- InstanceEnd --></html>

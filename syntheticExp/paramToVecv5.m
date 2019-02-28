@@ -1,0 +1,11 @@
+function x=paramToVecv5(beta,betad,theta,phi,alpha1,alpha2,L,n,p,q)
+Ltot=sum(L);
+sizes=[p^2 p p*Ltot Ltot^2 p Ltot];
+sums=cumsum(sizes); 
+x=zeros(sum(sizes),1);
+x(1:p^2)=beta(:);
+x(sums(1)+1:sums(2))=betad(:);
+x(sums(2)+1:sums(3))=theta(:);
+x(sums(3)+1:sums(4))=phi(:);
+x(sums(4)+1:sums(5))=alpha1(:);
+x(sums(5)+1:sums(6))=alpha2(:);
